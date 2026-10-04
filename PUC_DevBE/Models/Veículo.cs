@@ -13,8 +13,10 @@ namespace PUC_DevBE.Models
         [Required(ErrorMessage = "Obrigatório informar a Placa do veículo!")]
         public string Placa { get; set; }
         [Required(ErrorMessage = "Obrigatório informar o Ano de Fabricação do veículo!")]
+        [Display(Name = "Ano de Fabricação")]
         public int AnoFabricacao { get; set; }
         [Required(ErrorMessage = "Obrigatório informar o Ano do Modelo do veículo!")]
+        [Display(Name = "Ano do Modelo")]
         public int AnoModelo { get; set; }
     }
 }
