@@ -17,5 +17,20 @@ namespace PUC_DevBE.Controllers
 
             return View(dados);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(Veículo veiculo)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Veiculos.Add(veiculo);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }
